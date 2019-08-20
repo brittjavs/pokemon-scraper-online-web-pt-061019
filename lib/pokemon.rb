@@ -19,7 +19,7 @@ attr_accessor :id, :name, :type, :db
   
   def self.find(number, db)
     sql = <<-SQL
-    SELECT * FROM pokemon WHERE id = ? LIMIT 1
+    SELECT * FROM pokemon WHERE id = number LIMIT 1
     SQL
     DB[:CONN].execute(sql, self.id, self.db).map do |row|
       id = row[0]
