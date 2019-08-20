@@ -14,7 +14,7 @@ attr_accessor :id, :name, :type, :db
   VALUES (?, ?);
   SQL
   db.execute(sql)
-  @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
+  # @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
   end
   
   def self.find(id, db)
