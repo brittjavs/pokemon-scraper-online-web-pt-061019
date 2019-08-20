@@ -11,7 +11,7 @@ attr_accessor :id, :name, :type, :db
   def self.save(name, type, db)
   sql = <<-SQL
   INSERT INTO pokemon(name, type)
-  VALUES (?, ?)
+  VALUES (?, ?);
   SQL
   db.execute(sql)
   # @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
@@ -19,10 +19,9 @@ attr_accessor :id, :name, :type, :db
   
   def self.find(id, db)
     sql = <<-SQL
-    SELECT * FROM pokemon WHERE id = ? 
+    SELECT * FROM pokemon WHERE id = ?;
     SQL
     db.execute(sql, self.id).map do |row|
-      id = row[0]
       name = row[1]
       type = row[2]
       new_pokemon = self.new(id, name, type)
