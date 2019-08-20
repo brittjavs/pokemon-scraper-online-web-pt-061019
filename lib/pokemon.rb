@@ -10,7 +10,6 @@ attr_accessor :id, :name, :type, :db
   
   def self.save(name, type, db)
     db.execute("INSERT INTO pokemon(name, type) VALUES (?, ?);", name, type)
-  # # @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
   end
   
   # def self.find(id, db)
