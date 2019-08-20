@@ -21,7 +21,7 @@ attr_accessor :id, :name, :type, :db
     sql = <<-SQL
     SELECT * FROM pokemon WHERE id = ? 
     SQL
-    DB[:CONN].execute(sql, self.id, self.db).map do |row|
+    DB[:CONN].execute(sql).map do |row|
       id = row[0]
       name = row[1]
       type = row[2]
