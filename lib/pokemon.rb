@@ -16,11 +16,11 @@ attr_accessor :id, :name, :type, :db
   @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
   end
   
-  def self.find(number, @db)
+  def self.find(number)
     sql = <<-SQL
     SELECT * FROM pokemon WHERE id = number LIMIT 1
     SQL
-    DB[:CONN].execute(sql, self.id, self.db).map do |row|
+    DB[:CONN].execute(sql, self.id).map do |row|
       id = row[0]
       name = row[1]
       type = row[2]
