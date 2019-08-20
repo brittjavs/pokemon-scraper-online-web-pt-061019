@@ -26,6 +26,7 @@ attr_accessor :id, :name, :type, :db
       name = row[1]
       type = row[2]
       new_pokemon = self.new(id: id, name: name, type: type)
+      new_pokemon
     end
   end
   
