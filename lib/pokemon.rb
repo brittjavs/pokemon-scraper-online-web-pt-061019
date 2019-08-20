@@ -7,7 +7,7 @@ attr_accessor :id, :name, :type, :db
   @type = type
   end
   
-  def self.save(name, type, @db)
+  def self.save(name, type)
   sql = <<-SQL
   INSERT INTO pokemon(name, type)
   VALUES (?, ?)
