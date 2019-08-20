@@ -12,16 +12,14 @@ attr_accessor :id, :name, :type, :db
     db.execute("INSERT INTO pokemon(name, type) VALUES (?, ?);", name, type)
   end
   
-  # def self.find(id, db)
-  #   sql = <<-SQL
-  #   SELECT * FROM pokemon WHERE id = ?;
-  #   SQL
-  #   db.execute(sql, id).map do |row|
+  def self.find(id, db)
+
+  db.execute("SELECTid)
   #     name = row[1]
   #     type = row[2]
   #     new_pokemon = self.new(id, name, type)
   #     new_pokemon
   #   end
-  # end
+  end
   
 end
